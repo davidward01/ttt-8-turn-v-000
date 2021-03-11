@@ -20,6 +20,17 @@ def position_taken?(board, index)
   end
 end
 
+def turn(board)
+  puts "Please enter 1-9"
+  input = gets.chomp
+  if valid_move?(board, input)
+    move(board, input)
+  else
+    turn
+  end
+  display_board(board)
+end
+
 
 
 
