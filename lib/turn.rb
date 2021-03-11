@@ -11,9 +11,22 @@ def valid_move?(board, position)
     if !position_taken?(board, position.to_i-1)
       true
     end
-  end
+end
 
-  # position.to_i.between?(1,9) && !position_taken?(board, position.to_i-1)
+# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
+position.to_i.between?(1,9) && !position_taken?(board, position.to_i-1)
+end
+
+def position_taken?(board, position)
+  if (board[position] ==  " " || board[position] == "" || board[position] == nil)
+     taken = false
+  else
+     taken = true
+ end
+end
+
+def move(board, position, char = "X")
+  board[position.to_i-1] = char
 end
 
 def turn(board)
@@ -25,12 +38,4 @@ def turn(board)
     turn(board)
   end
   display_board(board)
-end
-
-def position_taken?(board, location)
-  board[location] != " "
-end
-
-def move(board, location, current_player = "X")
-  board[location.to_i-1] = current_player
 end
