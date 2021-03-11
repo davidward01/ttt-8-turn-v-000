@@ -23,6 +23,6 @@ end
 
 
 
-def move(board, index)
+#def move(board, index)
 
-end
+#end
